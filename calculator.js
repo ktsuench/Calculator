@@ -323,7 +323,9 @@ calcEquals.onclick = () => {
 
     // Truncate number of decimals shown to 4.
     result = Number(result).toString();
-    result = result.substr(0, result.indexOf(".") + 5);
+    if (result.includes(".")) {
+        result.substr(0, result.indexOf(".") + 5);
+    }
 
     // Display the result.
     calcDisplay.innerHTML = result;
